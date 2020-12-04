@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "ApolloCombine",
+        "repositoryURL": "https://github.com/joel-perry/ApolloCombine",
+        "state": {
+          "branch": null,
+          "revision": "bbb4d132f4bdc156e382ce2275f57d6e489ed800",
+          "version": "0.3.0"
+        }
+      },
+      {
         "package": "InflectorKit",
         "repositoryURL": "https://github.com/apollographql/InflectorKit",
         "state": {

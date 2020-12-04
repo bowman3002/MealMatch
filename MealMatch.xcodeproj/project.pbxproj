@@ -30,6 +30,7 @@
 		F6014035257AA31100B5338D /* ReviewTotalFor.graphql in Resources */ = {isa = PBXBuildFile; fileRef = F6014034257AA31100B5338D /* ReviewTotalFor.graphql */; };
 		F601403D257AB20B00B5338D /* GraphQLTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F601403C257AB20B00B5338D /* GraphQLTestView.swift */; };
 		F6014045257AC83A00B5338D /* RestaurantData.graphql in Resources */ = {isa = PBXBuildFile; fileRef = F6014044257AC83A00B5338D /* RestaurantData.graphql */; };
+		F6014057257AD65500B5338D /* ApolloCombine in Frameworks */ = {isa = PBXBuildFile; productRef = F6014056257AD65500B5338D /* ApolloCombine */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6014057257AD65500B5338D /* ApolloCombine in Frameworks */,
 				F6013FE8257A7B9700B5338D /* Apollo in Frameworks */,
 				F6013FEE257A893600B5338D /* Alamofire in Frameworks */,
 			);
@@ -207,6 +209,7 @@
 			packageProductDependencies = (
 				F6013FE7257A7B9700B5338D /* Apollo */,
 				F6013FED257A893600B5338D /* Alamofire */,
+				F6014056257AD65500B5338D /* ApolloCombine */,
 			);
 			productName = MealMatch;
 			productReference = F6013FB2257A6C9F00B5338D /* MealMatch.app */;
@@ -282,6 +285,7 @@
 			packageReferences = (
 				F6013FE6257A7B9700B5338D /* XCRemoteSwiftPackageReference "apollo-ios" */,
 				F6013FEC257A893600B5338D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F6014055257AD65500B5338D /* XCRemoteSwiftPackageReference "ApolloCombine" */,
 			);
 			productRefGroup = F6013FB3257A6C9F00B5338D /* Products */;
 			projectDirPath = "";
@@ -700,6 +704,14 @@
 				minimumVersion = 5.4.0;
 			};
 		};
+		F6014055257AD65500B5338D /* XCRemoteSwiftPackageReference "ApolloCombine" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/joel-perry/ApolloCombine";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -712,6 +724,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F6013FEC257A893600B5338D /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		F6014056257AD65500B5338D /* ApolloCombine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6014055257AD65500B5338D /* XCRemoteSwiftPackageReference "ApolloCombine" */;
+			productName = ApolloCombine;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
