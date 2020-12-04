@@ -1,0 +1,21 @@
+query RestaurantData($location: String, $top: Int) {
+  search(location: $location,
+             limit: $top) {
+    total
+    business {
+      name
+      photos
+      url
+      display_phone
+      review_count
+      rating
+      price
+      categories {
+        title
+      }
+      hours {
+        is_open_now
+      }
+    }
+  }
+}
