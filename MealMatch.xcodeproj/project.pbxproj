@@ -20,6 +20,7 @@
 		F6014001257A977700B5338D /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = F6014000257A977700B5338D /* schema.json */; };
 		F6014015257A99D700B5338D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6014013257A99D700B5338D /* API.swift */; };
 		F6014016257A99D700B5338D /* operationIDs.json in Resources */ = {isa = PBXBuildFile; fileRef = F6014014257A99D700B5338D /* operationIDs.json */; };
+		F6014035257AA31100B5338D /* ReviewTotalById.graphql in Resources */ = {isa = PBXBuildFile; fileRef = F6014034257AA31100B5338D /* ReviewTotalById.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		F6014000257A977700B5338D /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		F6014013257A99D700B5338D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		F6014014257A99D700B5338D /* operationIDs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = operationIDs.json; sourceTree = "<group>"; };
+		F6014034257AA31100B5338D /* ReviewTotalById.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReviewTotalById.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 				F6014000257A977700B5338D /* schema.json */,
 				F6013FF3257A89D900B5338D /* GQLAuthentication.swift */,
 				F6013FFB257A96E700B5338D /* TopFive.graphql */,
+				F6014034257AA31100B5338D /* ReviewTotalById.graphql */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			files = (
 				F6014001257A977700B5338D /* schema.json in Resources */,
 				F6014016257A99D700B5338D /* operationIDs.json in Resources */,
+				F6014035257AA31100B5338D /* ReviewTotalById.graphql in Resources */,
 				F6013FBD257A6CA100B5338D /* Preview Assets.xcassets in Resources */,
 				F6013FFC257A96E700B5338D /* TopFive.graphql in Resources */,
 				F6013FBA257A6CA100B5338D /* Assets.xcassets in Resources */,

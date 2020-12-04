@@ -4,6 +4,103 @@
 import Apollo
 import Foundation
 
+public final class ReviewTotalForQuery: GraphQLQuery {
+  /// The raw GraphQL definition of this operation.
+  public let operationDefinition: String =
+    """
+    query ReviewTotalFor($id: String) {
+      reviews(business: $id) {
+        __typename
+        total
+      }
+    }
+    """
+
+  public let operationName: String = "ReviewTotalFor"
+
+  public let operationIdentifier: String? = "d73c909f04e39fe5ab3e4e2da3c4606dd6f55c0c3b9b2822abe819a0c8fc1416"
+
+  public var id: String?
+
+  public init(id: String? = nil) {
+    self.id = id
+  }
+
+  public var variables: GraphQLMap? {
+    return ["id": id]
+  }
+
+  public struct Data: GraphQLSelectionSet {
+    public static let possibleTypes: [String] = ["Query"]
+
+    public static var selections: [GraphQLSelection] {
+      return [
+        GraphQLField("reviews", arguments: ["business": GraphQLVariable("id")], type: .object(Review.selections)),
+      ]
+    }
+
+    public private(set) var resultMap: ResultMap
+
+    public init(unsafeResultMap: ResultMap) {
+      self.resultMap = unsafeResultMap
+    }
+
+    public init(reviews: Review? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "reviews": reviews.flatMap { (value: Review) -> ResultMap in value.resultMap }])
+    }
+
+    /// Load reviews for a specific business.
+    public var reviews: Review? {
+      get {
+        return (resultMap["reviews"] as? ResultMap).flatMap { Review(unsafeResultMap: $0) }
+      }
+      set {
+        resultMap.updateValue(newValue?.resultMap, forKey: "reviews")
+      }
+    }
+
+    public struct Review: GraphQLSelectionSet {
+      public static let possibleTypes: [String] = ["Reviews"]
+
+      public static var selections: [GraphQLSelection] {
+        return [
+          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+          GraphQLField("total", type: .scalar(Int.self)),
+        ]
+      }
+
+      public private(set) var resultMap: ResultMap
+
+      public init(unsafeResultMap: ResultMap) {
+        self.resultMap = unsafeResultMap
+      }
+
+      public init(total: Int? = nil) {
+        self.init(unsafeResultMap: ["__typename": "Reviews", "total": total])
+      }
+
+      public var __typename: String {
+        get {
+          return resultMap["__typename"]! as! String
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "__typename")
+        }
+      }
+
+      /// Total number of reviews.
+      public var total: Int? {
+        get {
+          return resultMap["total"] as? Int
+        }
+        set {
+          resultMap.updateValue(newValue, forKey: "total")
+        }
+      }
+    }
+  }
+}
+
 public final class DataTopByLocationQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
