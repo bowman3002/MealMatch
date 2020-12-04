@@ -1,0 +1,5 @@
+query ReviewTotalFor($id: String){
+    reviews(business: $id) {
+    total
+  }
+}
