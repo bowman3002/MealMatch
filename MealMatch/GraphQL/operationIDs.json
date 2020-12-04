@@ -1,4 +1,8 @@
 {
+  "d9cbe6eb3e7dcc6002e575fb5923786aff99e94a7360b12228f9e696a007ef37": {
+    "name": "RestaurantData",
+    "source": "query RestaurantData($location: String, $top: Int) {\n  search(location: $location, limit: $top) {\n    __typename\n    total\n    business {\n      __typename\n      name\n      photos\n      url\n      display_phone\n      review_count\n      rating\n      price\n      categories {\n        __typename\n        title\n      }\n      hours {\n        __typename\n        is_open_now\n      }\n    }\n  }\n}"
+  },
   "d73c909f04e39fe5ab3e4e2da3c4606dd6f55c0c3b9b2822abe819a0c8fc1416": {
     "name": "ReviewTotalFor",
     "source": "query ReviewTotalFor($id: String) {\n  reviews(business: $id) {\n    __typename\n    total\n  }\n}"

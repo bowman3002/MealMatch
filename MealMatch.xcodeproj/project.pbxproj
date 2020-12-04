@@ -22,6 +22,7 @@
 		F6014016257A99D700B5338D /* operationIDs.json in Resources */ = {isa = PBXBuildFile; fileRef = F6014014257A99D700B5338D /* operationIDs.json */; };
 		F6014035257AA31100B5338D /* ReviewTotalFor.graphql in Resources */ = {isa = PBXBuildFile; fileRef = F6014034257AA31100B5338D /* ReviewTotalFor.graphql */; };
 		F601403D257AB20B00B5338D /* GraphQLTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F601403C257AB20B00B5338D /* GraphQLTestView.swift */; };
+		F6014045257AC83A00B5338D /* RestaurantData.graphql in Resources */ = {isa = PBXBuildFile; fileRef = F6014044257AC83A00B5338D /* RestaurantData.graphql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		F6014014257A99D700B5338D /* operationIDs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = operationIDs.json; sourceTree = "<group>"; };
 		F6014034257AA31100B5338D /* ReviewTotalFor.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReviewTotalFor.graphql; sourceTree = "<group>"; };
 		F601403C257AB20B00B5338D /* GraphQLTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLTestView.swift; sourceTree = "<group>"; };
+		F6014044257AC83A00B5338D /* RestaurantData.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = RestaurantData.graphql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 				F6013FF3257A89D900B5338D /* GQLAuthentication.swift */,
 				F6013FFB257A96E700B5338D /* TopFive.graphql */,
 				F6014034257AA31100B5338D /* ReviewTotalFor.graphql */,
+				F6014044257AC83A00B5338D /* RestaurantData.graphql */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				F6014001257A977700B5338D /* schema.json in Resources */,
 				F6014016257A99D700B5338D /* operationIDs.json in Resources */,
 				F6014035257AA31100B5338D /* ReviewTotalFor.graphql in Resources */,
+				F6014045257AC83A00B5338D /* RestaurantData.graphql in Resources */,
 				F6013FBD257A6CA100B5338D /* Preview Assets.xcassets in Resources */,
 				F6013FFC257A96E700B5338D /* TopFive.graphql in Resources */,
 				F6013FBA257A6CA100B5338D /* Assets.xcassets in Resources */,
