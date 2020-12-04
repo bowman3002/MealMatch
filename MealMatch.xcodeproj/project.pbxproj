@@ -14,6 +14,7 @@
 		F6013FC8257A6CA100B5338D /* MealMatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013FC7257A6CA100B5338D /* MealMatchTests.swift */; };
 		F6013FD3257A6CA100B5338D /* MealMatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013FD2257A6CA100B5338D /* MealMatchUITests.swift */; };
 		F6013FE8257A7B9700B5338D /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = F6013FE7257A7B9700B5338D /* Apollo */; };
+		F6013FEE257A893600B5338D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F6013FED257A893600B5338D /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6013FE8257A7B9700B5338D /* Apollo in Frameworks */,
+				F6013FEE257A893600B5338D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +152,7 @@
 			name = MealMatch;
 			packageProductDependencies = (
 				F6013FE7257A7B9700B5338D /* Apollo */,
+				F6013FED257A893600B5338D /* Alamofire */,
 			);
 			productName = MealMatch;
 			productReference = F6013FB2257A6C9F00B5338D /* MealMatch.app */;
@@ -224,6 +227,7 @@
 			mainGroup = F6013FA9257A6C9F00B5338D;
 			packageReferences = (
 				F6013FE6257A7B9700B5338D /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				F6013FEC257A893600B5338D /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = F6013FB3257A6C9F00B5338D /* Products */;
 			projectDirPath = "";
@@ -598,6 +602,14 @@
 				minimumVersion = 0.38.2;
 			};
 		};
+		F6013FEC257A893600B5338D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -605,6 +617,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F6013FE6257A7B9700B5338D /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = Apollo;
+		};
+		F6013FED257A893600B5338D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6013FEC257A893600B5338D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
