@@ -1,0 +1,9 @@
+query DataTopByLocation($location: String, $top: Int) {
+  search(location: $location,
+             limit: $top) {
+    total
+    business {
+      name
+    }
+  }
+}

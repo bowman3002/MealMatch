@@ -1,0 +1,6 @@
+{
+  "d9c52cfbf2bb62e29f8f350622947c2c215ca7530c23e122571db3301685da02": {
+    "name": "DataTopByLocation",
+    "source": "query DataTopByLocation($location: String, $top: Int) {\n  search(location: $location, limit: $top) {\n    __typename\n    total\n    business {\n      __typename\n      name\n    }\n  }\n}"
+  }
+}

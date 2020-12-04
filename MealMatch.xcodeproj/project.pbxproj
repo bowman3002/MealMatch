@@ -15,6 +15,11 @@
 		F6013FD3257A6CA100B5338D /* MealMatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013FD2257A6CA100B5338D /* MealMatchUITests.swift */; };
 		F6013FE8257A7B9700B5338D /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = F6013FE7257A7B9700B5338D /* Apollo */; };
 		F6013FEE257A893600B5338D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F6013FED257A893600B5338D /* Alamofire */; };
+		F6013FF4257A89D900B5338D /* GQLAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6013FF3257A89D900B5338D /* GQLAuthentication.swift */; };
+		F6013FFC257A96E700B5338D /* TopFive.graphql in Resources */ = {isa = PBXBuildFile; fileRef = F6013FFB257A96E700B5338D /* TopFive.graphql */; };
+		F6014001257A977700B5338D /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = F6014000257A977700B5338D /* schema.json */; };
+		F6014015257A99D700B5338D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6014013257A99D700B5338D /* API.swift */; };
+		F6014016257A99D700B5338D /* operationIDs.json in Resources */ = {isa = PBXBuildFile; fileRef = F6014014257A99D700B5338D /* operationIDs.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		F6013FCE257A6CA100B5338D /* MealMatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealMatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6013FD2257A6CA100B5338D /* MealMatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealMatchUITests.swift; sourceTree = "<group>"; };
 		F6013FD4257A6CA100B5338D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6013FF3257A89D900B5338D /* GQLAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GQLAuthentication.swift; sourceTree = "<group>"; };
+		F6013FFB257A96E700B5338D /* TopFive.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = TopFive.graphql; sourceTree = "<group>"; };
+		F6014000257A977700B5338D /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		F6014013257A99D700B5338D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		F6014014257A99D700B5338D /* operationIDs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = operationIDs.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +109,7 @@
 		F6013FB4257A6C9F00B5338D /* MealMatch */ = {
 			isa = PBXGroup;
 			children = (
+				F6013FF2257A89A800B5338D /* GraphQL */,
 				F6013FB5257A6C9F00B5338D /* MealMatchApp.swift */,
 				F6013FB7257A6C9F00B5338D /* ContentView.swift */,
 				F6013FB9257A6CA100B5338D /* Assets.xcassets */,
@@ -134,6 +145,18 @@
 			path = MealMatchUITests;
 			sourceTree = "<group>";
 		};
+		F6013FF2257A89A800B5338D /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				F6014013257A99D700B5338D /* API.swift */,
+				F6014014257A99D700B5338D /* operationIDs.json */,
+				F6014000257A977700B5338D /* schema.json */,
+				F6013FF3257A89D900B5338D /* GQLAuthentication.swift */,
+				F6013FFB257A96E700B5338D /* TopFive.graphql */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,6 +164,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6013FD7257A6CA100B5338D /* Build configuration list for PBXNativeTarget "MealMatch" */;
 			buildPhases = (
+				F601400F257A994F00B5338D /* Codegen GraphQL Schema and Queries */,
 				F6013FAE257A6C9F00B5338D /* Sources */,
 				F6013FAF257A6C9F00B5338D /* Frameworks */,
 				F6013FB0257A6C9F00B5338D /* Resources */,
@@ -245,7 +269,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6014001257A977700B5338D /* schema.json in Resources */,
+				F6014016257A99D700B5338D /* operationIDs.json in Resources */,
 				F6013FBD257A6CA100B5338D /* Preview Assets.xcassets in Resources */,
+				F6013FFC257A96E700B5338D /* TopFive.graphql in Resources */,
 				F6013FBA257A6CA100B5338D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,12 +293,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F601400F257A994F00B5338D /* Codegen GraphQL Schema and Queries */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Codegen GraphQL Schema and Queries";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\ncd \"${SRCROOT}\"/Codegen\nxcrun -sdk macosx swift run\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F6013FAE257A6C9F00B5338D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6013FF4257A89D900B5338D /* GQLAuthentication.swift in Sources */,
 				F6013FB8257A6C9F00B5338D /* ContentView.swift in Sources */,
+				F6014015257A99D700B5338D /* API.swift in Sources */,
 				F6013FB6257A6C9F00B5338D /* MealMatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
