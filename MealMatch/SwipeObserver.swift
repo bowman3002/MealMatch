@@ -13,13 +13,14 @@ import ApolloCombine
 func resultToCard(data: RestaurantDataQuery.Data.Search.Business?) -> Card? {
     if let data = data,
        let name = data.name,
+       let id = data.id,
        let hours = data.hours?.first??.isOpenNow,
        let categories = data.categories,
        let imageURLs = data.photos {
-        return Card(id: 0,
+        return Card(id: id,
                     drag: 0,
                     degree: 0,
-                    restaurant: Restaurant(id: 0,
+                    restaurant: Restaurant(id: id,
                                            name: name,
                                            hours: hours ? "Open Now!" : "Closed",
                                            category: categories.first??.title ?? "",
@@ -40,7 +41,7 @@ class SwipeObserver : ObservableObject{
 //        self.cards.append(Card(id: 0, drag: 0, degree: 0, restaurant: Restaurant(id: 0, name: "Italian Restaurant", hours: "idk", category: "italian", imageUrl: "https://www.inspiredtaste.net/wp-content/uploads/2019/03/Spaghetti-with-Meat-Sauce-Recipe-1-1200.jpg")))
         //Skipping for brevity
         
-        publisher = Network.shared.apollo.fetchPublisher(query: RestaurantDataQuery(location: "Ann Arbor", top: 1))
+        publisher = Network.shared.apollo.fetchPublisher(query: RestaurantDataQuery(location: "Ann Arbor", top: 5))
             .compactMap({ return $0.data?.search?.business?.compactMap(resultToCard)})
 
         self.setupGQLSubscriber()

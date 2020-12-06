@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Restaurant : Identifiable {
-var id : Int
+var id : String
 var name : String
 var hours : String
 var category: String

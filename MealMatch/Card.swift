@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Card : Identifiable {
-var id : Int
+var id : String
 var drag : CGFloat
 var degree : Double
 var restaurant: Restaurant
