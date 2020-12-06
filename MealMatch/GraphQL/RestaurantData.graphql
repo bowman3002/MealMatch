@@ -3,6 +3,7 @@ query RestaurantData($location: String, $top: Int) {
              limit: $top) {
     total
     business {
+      id
       name
       photos
       url

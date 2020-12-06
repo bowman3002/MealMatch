@@ -14,6 +14,7 @@ public final class RestaurantDataQuery: GraphQLQuery {
         total
         business {
           __typename
+          id
           name
           photos
           url
@@ -36,7 +37,7 @@ public final class RestaurantDataQuery: GraphQLQuery {
 
   public let operationName: String = "RestaurantData"
 
-  public let operationIdentifier: String? = "d9cbe6eb3e7dcc6002e575fb5923786aff99e94a7360b12228f9e696a007ef37"
+  public let operationIdentifier: String? = "e60e8b2a71daf7c75fe710454c64282b31e852fd446de241a06471f47f2cdbc4"
 
   public var location: String?
   public var top: Int?
@@ -135,6 +136,7 @@ public final class RestaurantDataQuery: GraphQLQuery {
         public static var selections: [GraphQLSelection] {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
+            GraphQLField("id", type: .scalar(String.self)),
             GraphQLField("name", type: .scalar(String.self)),
             GraphQLField("photos", type: .list(.scalar(String.self))),
             GraphQLField("url", type: .scalar(String.self)),
@@ -153,8 +155,8 @@ public final class RestaurantDataQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(name: String? = nil, photos: [String?]? = nil, url: String? = nil, displayPhone: String? = nil, reviewCount: Int? = nil, rating: Double? = nil, price: String? = nil, categories: [Category?]? = nil, hours: [Hour?]? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Business", "name": name, "photos": photos, "url": url, "display_phone": displayPhone, "review_count": reviewCount, "rating": rating, "price": price, "categories": categories.flatMap { (value: [Category?]) -> [ResultMap?] in value.map { (value: Category?) -> ResultMap? in value.flatMap { (value: Category) -> ResultMap in value.resultMap } } }, "hours": hours.flatMap { (value: [Hour?]) -> [ResultMap?] in value.map { (value: Hour?) -> ResultMap? in value.flatMap { (value: Hour) -> ResultMap in value.resultMap } } }])
+        public init(id: String? = nil, name: String? = nil, photos: [String?]? = nil, url: String? = nil, displayPhone: String? = nil, reviewCount: Int? = nil, rating: Double? = nil, price: String? = nil, categories: [Category?]? = nil, hours: [Hour?]? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Business", "id": id, "name": name, "photos": photos, "url": url, "display_phone": displayPhone, "review_count": reviewCount, "rating": rating, "price": price, "categories": categories.flatMap { (value: [Category?]) -> [ResultMap?] in value.map { (value: Category?) -> ResultMap? in value.flatMap { (value: Category) -> ResultMap in value.resultMap } } }, "hours": hours.flatMap { (value: [Hour?]) -> [ResultMap?] in value.map { (value: Hour?) -> ResultMap? in value.flatMap { (value: Hour) -> ResultMap in value.resultMap } } }])
         }
 
         public var __typename: String {
@@ -163,6 +165,16 @@ public final class RestaurantDataQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "__typename")
+          }
+        }
+
+        /// Yelp ID of this business.
+        public var id: String? {
+          get {
+            return resultMap["id"] as? String
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "id")
           }
         }
 
