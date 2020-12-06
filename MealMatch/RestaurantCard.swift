@@ -27,32 +27,27 @@ extension View {
 struct RestaurantCard: View {
     private var width: CGFloat
     private var height: CGFloat
-    private var restaurant: Restaurant
+    @Binding private var restaurant: RestaurantDataQuery.Data.Search.Business
     
-    init(width: CGFloat, height: CGFloat, restaurant: Restaurant) {
+    init(width: CGFloat, height: CGFloat, restaurant: Binding<RestaurantDataQuery.Data.Search.Business>) {
         self.width = width > 0 ? width : 0
         self.height = height > 0 ? height : 0
-        self.restaurant = restaurant
+        self._restaurant = restaurant
     }
     
     var body: some View {
-        VStack {
-            RemoteImage(url: self.restaurant.imageUrl)
+        VStack(alignment: .center, spacing: 0) {
+            RemoteImage(url: (self.restaurant.photos?.first ?? "") ?? "")
                 .aspectRatio(contentMode: .fit)
-                .cornerRadius(20, corners: [.topLeft, .topRight])
             
-            ZStack {
-                Color.white
-                VStack {
-                    Text(self.restaurant.name)
-                        .font(.title)
-                    Text("Hours:" + self.restaurant.hours)
-                    Text("Category:" + self.restaurant.category)
-                }
-            }
-            .cornerRadius(20, corners: [.bottomLeft, .bottomRight])
+            RestaurantDetailView(restaurant: $restaurant)
         }
         .frame(width: self.width, height: self.height, alignment: .topLeading)
+        .cornerRadius(20)
+        .overlay(
+            RoundedRectangle(cornerRadius: 20.0)
+                .stroke(Color("CardBorder"), lineWidth: 5.0)
+        )
     }
 }
 

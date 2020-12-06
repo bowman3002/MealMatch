@@ -19,7 +19,7 @@ struct SwipableCardStack : View {
                     
                     ForEach(self.observer.cards){card in
                         
-                        RestaurantCard(width: geo.size.width-40, height: geo.size.height - 80, restaurant: card.restaurant)
+                        RestaurantCard(width: geo.size.width-40, height: geo.size.height - 80, restaurant: .constant(card.restaurant))
                             .gesture(DragGesture()
                                 
                                 .onChanged({ (value) in
