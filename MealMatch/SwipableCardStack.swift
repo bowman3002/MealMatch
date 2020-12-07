@@ -10,6 +10,7 @@ import SwiftUI
 struct SwipableCardStack : View {
 
     @EnvironmentObject var observer : SwipeObserver
+    let matchService = MatchService()
     
     var body : some View{
         VStack{
@@ -23,6 +24,9 @@ struct SwipableCardStack : View {
                             .gesture(DragGesture()
                                 
                                 .onChanged({ (value) in
+                                    
+                                    self.matchService.delegate?.matchDetected(manager: matchService, matchString: "")
+                                    
                                     
                                     if value.translation.width > 0{
                                         
@@ -49,6 +53,7 @@ struct SwipableCardStack : View {
 
                                         if card.drag > geo.size.width / 2 - 40{
                                             self.observer.update(id: card, value: 500, degree: 0)
+                                            self.matchService.send(restaurantName: "right")
                                         }
                                         else{
                                             self.observer.update(id: card, value: 0, degree: 0)
@@ -58,6 +63,7 @@ struct SwipableCardStack : View {
 
                                         if -card.drag > geo.size.width / 2 - 40{
                                             self.observer.update(id: card, value: -500, degree: 0)
+                                            self.matchService.send(restaurantName: "left")
                                         }
                                         else{
 

@@ -23,6 +23,8 @@ struct NavigationConfigurator: UIViewControllerRepresentable {
 
 struct ContentView: View {
     
+    @State private var matchService = MatchService();
+    
     init() {
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().barTintColor = UIColor(hex: "#4a919e00")
@@ -32,7 +34,7 @@ struct ContentView: View {
         NavigationView {
             ZStack {
                 Color(hex: "f5f5f5").edgesIgnoringSafeArea(.all)
-                SwipableCardStack()
+                SessionStartView(connectionsLabel: "Connected devices:  ")
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
